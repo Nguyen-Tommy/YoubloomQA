@@ -34,7 +34,7 @@ public class ShowSetupSteps {
 
     @Then("the user's show should be setup successfully")
     public void the_user_s_show_should_be_setup_successfully() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         Assert.assertEquals("","");
     }
 }

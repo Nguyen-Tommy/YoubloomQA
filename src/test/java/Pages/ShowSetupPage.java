@@ -89,6 +89,18 @@ public class ShowSetupPage {
     @FindBy(how = How.NAME, using = "_ticket_checkin_availability_to_date")
     public WebElement ticketCheckinAvailabilityToDate;
 
+    @FindBy(how = How.NAME, using = "parking_info")
+    public WebElement parkingInfo;
+
+    @FindBy(how = How.NAME, using = "artist_performance_start")
+    public WebElement artistPerformanceStart;
+
+    @FindBy(how = How.NAME, using = "artist_performance_end")
+    public WebElement artistPerformanceEnd;
+
+    @FindBy(how = How.NAME, using = "personal_items_info")
+    public WebElement personalItemsInfo;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"next-prev-buttons-1\"]/button[2]")
     public WebElement publishBtn;
 
@@ -133,6 +145,11 @@ public class ShowSetupPage {
         ticketCheckinAvailabilityToDate.sendKeys(formatter3.format(date.getTime()));
         date = Calendar.getInstance();
         dateOnSaleFrom.sendKeys(formatter3.format(date.getTime()));
+        artistPerformanceStart.sendKeys(formatter2.format(date.getTime()));
+        date.add(Calendar.HOUR, 2);
+        artistPerformanceEnd.sendKeys(formatter2.format(date.getTime()));
+        parkingInfo.sendKeys("a");
+        personalItemsInfo.sendKeys("a");
     }
     public void publish() {
         publishBtn.submit();
